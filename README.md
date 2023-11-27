@@ -10,7 +10,7 @@ This project explores the application of the Grey Wolf Algorithm (GWA) in the do
 
 The Grey Wolf Algorithm is a nature-inspired optimization algorithm based on the social hierarchy and hunting behavior of grey wolves. Mimicking the leadership hierarchy and collaborative hunting strategies, this algorithm offers an efficient way to find optimal solutions to diverse optimization problems.
 
-![Grey Wolf Algorithm](image_url_here)
+![Grey Wolf Algorithm](Updating_position_of_gray_wolves_in_GWO.jpg)
 
 ## Features
 
