@@ -1,0 +1,57 @@
+procedure OBJECTIVEFUNCTION(x)
+f itness ← ∑dim
+i=1 x2
+i
+return f itness
+end procedure
+procedure GREYWOLFALGO-
+RITHM(objf unc, lb, ub, dim, searchagentno, maxiter)
+Initialize α-wolf, β-wolf, and δ-wolf positions as ⃗ 0
+α-wolf fitness ← ∞, β-wolf fitness ←
+∞, δ-wolf fitness ← ∞
+Initialize search agent positions ⃗xi = 1searcha gentn o and fitness val
+Initialize convergence curve as a vector of 0’s of length maxiter
+Initialize best position found so far as ⃗ 0 and best fitness as ∞
+for t = 1 to maxiter do
+for i = 1 to searchagentno do
+if fi < α-wolf fitness then
+α-wolf position ← ⃗x i
+α-wolf fitness ← fi
+else if fi > α-wolf fitness and fi < β-wolf fitness
+then
+β-wolf position ← ⃗x i
+β-wolf fitness ← fi
+else if fi > α-wolf fitness and fi > β-wolf fitness
+and fi < δ-wolf fitness then
+δ-wolf position ← ⃗xi
+δ-wolf fitness ← fi
+end if
+end for
+for i = 1 to searchagentno do
+a ← 2 − 2 · t
+maxiter
+r1, r2 ← random [0, 1]
+A1 ← 2 · a · r1 − a
+C1 ← 2 · r2
+Dα ← |C1 · α-wolf position − ⃗xi |
+X1 ← α-wolf position − A1 · Dα
+r1, r2 ← random [0, 1]
+A2 ← 2 · a · r1 − a
+C2 ← 2 · r2
+Dβ ← |C2 · β-wolf position − ⃗xi |
+X2 ← β-wolf position − A2 · Dβ
+r1, r2 ← random [0, 1]
+A3 ← 2 · a · r1 − a
+C3 ← 2 · r2
+Dδ ← |C3 · δ-wolf position − ⃗xi |
+X3 ← δ-wolf position − A3 · Dδ
+⃗ x i ← X1+X2+X3
+3
+if ⃗x i /∈ [lb, ub]dim then
+⃗ x i ← lb + (ub − lb) · random [0, 1]dim
+end if
+fi ← OBJECTIVEFUNCTION(⃗x i)
+if fi < best fitness then
+best position ← ⃗x i
+best fitness ← fi
+end if
